@@ -50,12 +50,17 @@ window.onload = function() {
 				}
 				Crafty.sprite(json.tilesets[i].image, obj);
 			}
-			curr = 0;
-			for(var _lH = 0; _lH < json.layers[0].height; _lH++){
-				for(var _lW = 0; _lW < json.layers[0].width; _lW++){
-					var tile = json.layers[0].data[curr++];
-					Crafty.e("2D, Canvas, t" + tile + ", " + tp["t" + tile])
-						.attr({x: _lW * tW, y: _lH * tH});
+			for(var _l = 0; _l < json.layers.length; _l++){
+				curr = 0;
+				console.log("Loading layer" + _l, json.layers[_l].height, json.layers[_l].width);
+				for(var _lH = 0; _lH < json.layers[_l].height; _lH++){
+					for(var _lW = 0; _lW < json.layers[_l].width; _lW++){
+						var tile = json.layers[_l].data[curr++];
+						if(tile != 0) {
+							Crafty.e("2D, Canvas, t" + tile + ", " + tp["t" + tile])
+								.attr({x: _lW * tW, y: _lH * tH, z: _l});
+						}
+					}
 				}
 			}
 			console.log(tiles + " loaded...");

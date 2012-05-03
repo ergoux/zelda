@@ -2,6 +2,21 @@
 <map version="1.0" orientation="orthogonal" width="40" height="40" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="zelda_tiles1" tilewidth="16" tileheight="16" spacing="1">
   <image source="zelda_tiles1.png" width="786" height="322"/>
+  <tile id="247">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="249">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="295">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
   <tile id="463">
    <properties>
     <property name="e" value="solid, destroy"/>
@@ -10,6 +25,16 @@
   <tile id="565">
    <properties>
     <property name="e" value="solid, destroy"/>
+   </properties>
+  </tile>
+  <tile id="587">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="590">
+   <properties>
+    <property name="e" value="solid"/>
    </properties>
   </tile>
   <tile id="611">
@@ -28,6 +53,21 @@
    </properties>
   </tile>
   <tile id="628">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="629">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="630">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="631">
    <properties>
     <property name="e" value="solid"/>
    </properties>
@@ -120,7 +160,17 @@
  </tileset>
  <layer name="Tile Layer 1" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2ElOAkEYQOGi8Q7OF1A3unDHEnBIdKtudOENAKfoVqPG+QSAAwfQqHE+gTgeQKPG+QKKPhaETqSkkW66JLX4EiBV9T9Is+j2eYTwaa6awzwWsIglLGNFgba0PezjAIc4wjFOXGjxI4Cg6bNHPOEZL3jFG97z7HNCCGFE0GwI0YJKVKEaNahFHeqN7BrzvkLmDRqFibInhjj6eT8APwIIog3t6ECnkV1j3pc+p9Xkt3l2/rbTnDeDWZvPtcs2XTvY1X26r8z7QswII4IhDGMEoxiTzC9lX5QZMcSxijWsYwMJBfpOmZHEGc5xgUtc4VqBvk9mpPAF4RXCAwNeVHhz77lj7T0ecvR9pM+USDn8XaxooLlRokmB/7vuU6+vC90K941jQuG+fJIW/Jfrr4eGXok+Bfo0NU1ybUwZP1+r0PRXTvdtMmOrCE733TDjtgil7HP7WtM0KzLPhmTcfmaUuXeTcfuZQubeTSbXPV05+AYOV940
+   eJzt0jESQDAURdGfLAcLQiUWJPZiW+wAI40mRX4hMzHc4rRvbvGciLiP2gKfsBbuG4MlYaCPPkXq35pZ6Zse7ntlHwAAAEBeuxE5Iqcp33WrrEgdaWz5LvryaENLF+lf1AcA+KcLhrsPEA==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt1V1KAlEYh/HjTHswra5zBe0g0z4XU4K6g5TKjxWUkO2gIrNcgQrqDizKstsIyh4IbyLhmK/MwLwP/C4985+DqDGaNrmjkDHHOEEBRZRQDnm97KcbdtRwizrucI+GT/Y9seMZA7zgFUO8+WRf2DFmERFEsYRlrDgy56/ynrF/eufz6+yIYwMJJLGJLaz98mGmP1+qS55/hWuhe5NO982W7pst3fd3hzwvNwd5ofcY34s0qXvuc87DHDz69Hsq3T7veYCUhbSlDLJC93fKOWeoWDi3VMWF0L4m57TQttCx1EVPaN8n53xhZMFx7bhYcGX2aZqmedk2v3072MVeQP73NU3Tgt43056VNw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztzrkRwCAQBMGFQPTknxyCBHS+AkBGd9X4kwAAAADwd6MlTzWr1XbffB09OauruvvuGwBIXt+uBFE=
   </data>
  </layer>
 </map>
