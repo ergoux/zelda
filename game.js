@@ -71,18 +71,11 @@ window.onload = function() {
 	//automatically play the loading scene
 	Crafty.scene("loading");
 	
-	renderMap("mapa_cuarto", function(){
-		console.log("CASCASCASCAS");
-		
-		var a = Crafty.e("2D, DOM, pollo, SpriteAnimation")
-			.attr({x: 0, y: 0})
-			.animate("aletear", 0, 0, 9);
-		
-		a.animate("aletear", 20, -1);
-			
-	});
-	
-	Crafty.scene("main", function() {
-		//generateWorld();
+	loadMap("mapa_cuarto", function(){
+		Crafty.scene("main", function() {
+			renderMap("mapa_cuarto", function(){
+
+			});
+		});
 	});
 };
