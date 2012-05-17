@@ -72,10 +72,11 @@ window.onload = function() {
 	Crafty.scene("loading");
 	
 	loadMap("mapa_cuarto", function(){
-		Crafty.scene("main", function() {
-			renderMap("mapa_cuarto", function(){
+	});
+	Crafty.scene("main", function() {
+		renderMap("mapa_cuarto", function(){
 
-			});
 		});
 	});
+	
 };

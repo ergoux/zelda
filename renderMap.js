@@ -37,6 +37,7 @@ function loadMap(map, cb) {
 					obj["t" + curr] = [_tW * (tW + s), _tH * (tH + s), tW, tH];
 					tilesData["t" + curr] = {
 						gid: curr,
+						path: json.tilesets[i].image,
 						properties: tp["t" + tile],
 						width: tW,
 						height: tH
@@ -70,17 +71,40 @@ function renderMap(map, cb) {
 				}
 			} else {
 				for(var _o = 0, max_o = json.layers[_l].objects.length; _o < max_o; _o++) {
-					var tile = json.layers[_l].objects[_o].gid;
-					var xx = json.layers[_l].objects[_o].x;
-					var yy = json.layers[_l].objects[_o].y - tilesData["t" + tile].height;
-					var zi = parseInt(json.layers[_l].properties["z-index"]);
-					if(tile != 0) {
-						Crafty.e("2D, Canvas, t" + tile).attr({x: xx, y: yy, z: zi});
-						console.log("2D, Canvas, t" + tile);
-					}
+					addObject(json.layers[_l].objects[_o]);
+					// var tile = json.layers[_l].objects[_o].gid;
+					// var xx = json.layers[_l].objects[_o].x;
+					// var type = json.layers[_l].objects[_o].type;
+					// 
+					// if(tile != 0) {
+					// 	console.log("2D, Canvas, t" + tile);
+					// }
 				}
 			}
 		}
 		cb && cb();
 	});
 }
+
+function addObject(o){
+	var yy = o.y - tilesData["t" + o.gid].height;
+	var zi = parseInt(o.properties["z-index"]);
+	console.log(o);
+	var a = Crafty.e("2D, Canvas, t" + o.gid + ( o.type == "animated" ? ",SpriteAnimation":"") )
+	.attr({x: o.x, y: yy, z: zi})
+	if(o.type == "animated") {
+		a.animate("aleteo",getAnimation(0,0,35,9))
+		.animate("aleteo", 20, -1);
+	}
+}
+
+function getAnimation(x,y,w,i){
+	var arr = [];
+	for (var xx = 0;xx<i;xx++){
+		arr.push([x + xx*w,y]);
+	}
+	return arr;
+}
+
+
+
