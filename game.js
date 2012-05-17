@@ -1,6 +1,5 @@
 window.onload = function() {
-	//start crafty
-	Crafty.init(640, 640);
+	Crafty.init(624, 416);
 	Crafty.canvas.init();
 	
 	//turn the sprite map into usable components
@@ -22,6 +21,11 @@ window.onload = function() {
 	Crafty.sprite("images/link.png", {
 		link: [0,30,25,30]
 	});
+
+	Crafty.sprite(35,"images/fullPollo.png", {
+		pollo: [0,0]
+	});
+
 	
 	function renderMap(map, cb) {
 		loadJSON(map+".json",function(json){
@@ -143,122 +147,19 @@ window.onload = function() {
 	
 	//automatically play the loading scene
 	Crafty.scene("loading");
+	
 	renderMap("map1", function(){
 		console.log("CASCASCASCAS");
+		
+		var a = Crafty.e("2D, DOM, pollo, SpriteAnimation")
+			.attr({x: 0, y: 0})
+			.animate("aletear", 0, 0, 9);
+		
+		a.animate("aletear", 20, -1);
+			
 	});
 	
 	Crafty.scene("main", function() {
 		//generateWorld();
-		
-		Crafty.c('Hero', {
-			init: function() {
-					//setup animations
-					this.direction = "down";
-					this.requires("SpriteAnimation, Collision,KeyBoard")
-					.animate("walk_up",getAnimation(0,120,30,8))
-					.animate("walk_down", getAnimation(0,30,30,8))
-					.animate("walk_left", getAnimation(239,0,24,8))
-					.animate("walk_right",getAnimation(239,120,30,6))
-					.animate("kame_down", getAnimation(0,90,30,6))
-					.animate("kame_up", getAnimation(0,180,30,5))
-					.animate("kame_left", getAnimation(239,90,30,5))
-					.animate("kame_right", getAnimation(239,180,30,5))
-					.animate("jalando_left", getAnimation(388,60,30,1).concat(getAnimation(388,60,30,1)))
-					/*
-						.animate("walk_left", getAnimation(3,230,28,4))
-						.animate("walk_right",getAnimation(1,40,28,4))
-						.animate("walk_up",getAnimation(2,80,28,4))
-						.animate("walk_down", getAnimation(1,0,28,4))
-						.animate("kame_down", getAnimation(3,364,28,5))
-						.animate("kame_right", getAnimation(154,283,28,5))
-						.animate("kame_up", getAnimation(325,275,28,5))
-					*/
-					
-					//change direction when a direction change event is received
-					.bind("KeyUp",function (e){
-						console.log("keyUp");
-						this.stop().animate("walk_" + this.direction, 10, 0).stop();
-					})
-					.bind("KeyDown",function (e){
-						console.log(e.key);
-						if(e.key == 90){
-							this.stop().animate("kame_" + this.direction, 10, 0);
-							if(this.collidingObjs){
-								for(var i in this.collidingObjs){
-									this.collidingObjs[i].obj.destroy();
-								}
-							}
-						}
-						if(e.key == 88){
-							this.stop().animate("jalando_" + this.direction, 10, 0);							
-							this.dragging = true;
-						}
-						if(e.key == 67){
-						}
-						if(e.key == 86){
-						}
-					})
-					
-					.bind("NewDirection",
-						function (direction) {
-							
-							if (direction.x < 0) {
-								this.direction = "left";
-								if (!this.isPlaying("walk_left"))
-									this.stop().animate("walk_left", 10, -1);
-							}
-							if (direction.x > 0) {
-								this.direction = "right";
-								if (!this.isPlaying("walk_right"))
-									this.stop().animate("walk_right", 10, -1);
-							}
-							if (direction.y < 0) {
-								this.direction = "up";
-								if (!this.isPlaying("walk_up"))
-									this.stop().animate("walk_up", 10, -1);
-							}
-							if (direction.y > 0) {
-								this.direction = "down";
-								if (!this.isPlaying("walk_down"))
-									this.stop().animate("walk_down", 10, -1);
-							}
-							if(!direction.x && !direction.y) {
-								this.stop();
-							}
-					})
-					// A rudimentary way to prevent the user from passing solid areas
-					.bind('Moved', function(from) {
-						this.collidingObjs = this.hit('destroy');
-						this.draggableObjs = this.hit('draggable');
-						for (var i in this.draggableObjs){
-							this.draggableObjs[i].obj.attr({x: from.x-16, y:from.y-16});
-							//this.draggableObjs[i].obj.move("right",1);
-						}
-						if( this.hit('solid')) {
-							this.attr({x: from.x, y:from.y});
-						}						
-					});
-				return this;
-			}
-		});
-
-		Crafty.c("RightControls", {
-			init: function() {
-				this.requires('Multiway');
-			},
-
-			rightControls: function(speed) {
-				this.multiway(2, {UP_ARROW: -90, DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180})
-				return this;
-			}
-
-		});
-		
-		//create our player entity with some premade components
-		player = Crafty.e("2D, Canvas, link, RightControls, Hero, Animate, Collision")
-			.attr({x: 160, y: 144, z: 2})
-			.rightControls(1);
 	});
-	
-	
 };

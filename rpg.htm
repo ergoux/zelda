@@ -14,29 +14,9 @@
 	.wrapper{position:absolute;bottom:10px;}
 	</style>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			document.ontouchmove = function(e){ e.preventDefault(); }
-			
-			$(".btn").bind("touchstart",function (e){
-				$(e.target).css("background-color","#0000FF")
-				console.log($(e.target).html());
-				if(player)player.trigger("KeyDown",{key:Crafty.keys[$(e.target).html() ]});	
-			});
-			$(".btn").bind("touchend",function (e){
-				$(e.target).css("background-color","#FFFFFF")});
-				if(player)player.trigger("KeyUp",{key:Crafty.keys[$(e.target).html() ]});	
-				
-		});
 	</script>
 </head>
 <body>
 	 <div id="cr-stage"></div>
-	<div class="wrapper">
-		<div class="btn">LEFT_ARROW</div>
-		<div class="btn">RIGHT_ARROW</div>
-		<div class="btn">UP_ARROW</div>
-		<div class="btn">DOWN_ARROW</div>
-		<div class="btn">Z</div>
-	</div>
 </body>
 </html>
