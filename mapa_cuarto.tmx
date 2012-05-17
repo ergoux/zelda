@@ -21,7 +21,7 @@
   </properties>
   <object name="fullPollo" type="animated" gid="3" x="56" y="223" width="560" height="560"/>
  </objectgroup>
- <objectgroup name="Overlay" width="39" height="26" visible="0">
+ <objectgroup name="Overlay" width="39" height="26">
   <properties>
    <property name="z-index" value="10"/>
   </properties>
