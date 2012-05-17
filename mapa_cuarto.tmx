@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="39" height="26" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="fondo" tilewidth="615" tileheight="413">
+  <image source="images/fondo.jpg" width="615" height="413"/>
+ </tileset>
+ <tileset firstgid="2" name="layer2" tilewidth="121" tileheight="212">
+  <image source="images/layer2.png" width="121" height="212"/>
+ </tileset>
+ <tileset firstgid="3" name="fullPollo" tilewidth="35" tileheight="35">
+  <image source="images/fullPollo.png" width="350" height="35"/>
+ </tileset>
+ <objectgroup color="#00a413" name="Fondo" width="39" height="26">
+  <properties>
+   <property name="z-index" value="0"/>
+  </properties>
+  <object gid="1" x="0" y="416"/>
+ </objectgroup>
+ <objectgroup name="Monitos" width="39" height="26">
+  <properties>
+   <property name="z-index" value="5"/>
+  </properties>
+  <object name="fullPollo" type="animated" gid="3" x="56" y="223" width="560" height="560"/>
+ </objectgroup>
+ <objectgroup name="Overlay" width="39" height="26" visible="0">
+  <properties>
+   <property name="z-index" value="10"/>
+  </properties>
+  <object gid="2" x="52" y="366"/>
+ </objectgroup>
+</map>

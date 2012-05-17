@@ -71,7 +71,7 @@ window.onload = function() {
 	//automatically play the loading scene
 	Crafty.scene("loading");
 	
-	renderMap("map1", function(){
+	renderMap("mapa_cuarto", function(){
 		console.log("CASCASCASCAS");
 		
 		var a = Crafty.e("2D, DOM, pollo, SpriteAnimation")

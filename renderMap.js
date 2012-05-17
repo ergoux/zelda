@@ -14,10 +14,11 @@ function renderMap(map, cb) {
 			var numH = Math.floor(iH / (tH + s));
 			var tiles = numW * numH;
 			var curr = 1;
+			console.log(json.tilesets)
 			for(var _tH = 0; _tH < numH; _tH++) {
 				for(var _tW = 0; _tW < numW; _tW++) {
 					var tile = curr + 1;
-					if(json.tilesets[i].tileproperties[curr]) tp["t" + tile] = json.tilesets[i].tileproperties[curr].e;
+					if(json.tilesets[i].tileproperties && json.tilesets[i].tileproperties[curr]) tp["t" + tile] = json.tilesets[i].tileproperties[curr].e;
 					else tp["t" + tile] = "";
 					obj["t" + curr] = [_tW * (tW + s), _tH * (tH + s), tW, tH];
 					curr++;
