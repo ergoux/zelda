@@ -17,6 +17,41 @@
     <property name="e" value="solid"/>
    </properties>
   </tile>
+  <tile id="396">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="397">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="398">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="399">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="400">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="401">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
+  <tile id="402">
+   <properties>
+    <property name="e" value="solid"/>
+   </properties>
+  </tile>
   <tile id="463">
    <properties>
     <property name="e" value="solid, destroy"/>
@@ -165,12 +200,12 @@
  </layer>
  <layer name="Tile Layer 2" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt1V1KAlEYh/HjTHswra5zBe0g0z4XU4K6g5TKjxWUkO2gIrNcgQrqDizKstsIyh4IbyLhmK/MwLwP/C4985+DqDGaNrmjkDHHOEEBRZRQDnm97KcbdtRwizrucI+GT/Y9seMZA7zgFUO8+WRf2DFmERFEsYRlrDgy56/ynrF/eufz6+yIYwMJJLGJLaz98mGmP1+qS55/hWuhe5NO982W7pst3fd3hzwvNwd5ofcY34s0qXvuc87DHDz69Hsq3T7veYCUhbSlDLJC93fKOWeoWDi3VMWF0L4m57TQttCx1EVPaN8n53xhZMFx7bhYcGX2aZqmedk2v3072MVeQP73NU3Tgt43056VNw==
+   eJzt01suQ1EUxvF9zjEHVfXMCDoDlLoMRiV0Btq4dgQqwQxKXDsClWAGNKh6FYnqPxEv4iRLu05ssr7k99i1v71Ot3MWS3xWA+fWsI4NbGILleC3m33kiB7HOMEpznCOuif97unxgEe08IQ2nj3pNxg6l8IQ0hhGBiOhzvxR7jnWoxd+P06PCUwihylMI4/sF6/u5/O1UuP8Axwq7U071q+/WL/+Yv2+zwrnlRJQVrrH5160ae35ljl3CWh6+j/VzgL3LGBRYEloGUWl/W0zp4odgV2hPewr9btgTgOXAldC17hR6vfGnA7eBcJIJsJApNPPYpGkEcgkkRnexizmMB/zLiVnJ9VPkr/Qz+fva7H8x0jfXS8sFt/TBXMkvNQ=
   </data>
  </layer>
  <layer name="Tile Layer 3" width="40" height="40">
   <data encoding="base64" compression="zlib">
-   eJztzrkRwCAQBMGFQPTknxyCBHS+AkBGd9X4kwAAAADwd6MlTzWr1XbffB09OauruvvuGwBIXt+uBFE=
+   eJzt0tkJgEAQRMFxA/HIPxZz8UjATkEQVrEK3v/AdBUAAMD/rEPvC+B5W3a9pyOdL9z42KqmNKel9b7me/wXAO65AFvQCW8=
   </data>
  </layer>
 </map>

@@ -163,6 +163,7 @@ window.onload = function() {
 					.animate("kame_up", getAnimation(0,180,30,5))
 					.animate("kame_left", getAnimation(239,90,30,5))
 					.animate("kame_right", getAnimation(239,180,30,5))
+					.animate("jalando_left", getAnimation(388,60,30,1).concat(getAnimation(388,60,30,1)))
 					/*
 						.animate("walk_left", getAnimation(3,230,28,4))
 						.animate("walk_right",getAnimation(1,40,28,4))
@@ -174,8 +175,13 @@ window.onload = function() {
 					*/
 					
 					//change direction when a direction change event is received
+					.bind("KeyUp",function (e){
+						console.log("keyUp");
+						this.stop().animate("walk_" + this.direction, 10, 0).stop();
+					})
 					.bind("KeyDown",function (e){
-						if(e.key == 32){
+						console.log(e.key);
+						if(e.key == 90){
 							this.stop().animate("kame_" + this.direction, 10, 0);
 							if(this.collidingObjs){
 								for(var i in this.collidingObjs){
@@ -183,10 +189,19 @@ window.onload = function() {
 								}
 							}
 						}
+						if(e.key == 88){
+							this.stop().animate("jalando_" + this.direction, 10, 0);							
+							this.dragging = true;
+						}
+						if(e.key == 67){
+						}
+						if(e.key == 86){
+						}
 					})
 					
 					.bind("NewDirection",
 						function (direction) {
+							
 							if (direction.x < 0) {
 								this.direction = "left";
 								if (!this.isPlaying("walk_left"))
@@ -214,6 +229,11 @@ window.onload = function() {
 					// A rudimentary way to prevent the user from passing solid areas
 					.bind('Moved', function(from) {
 						this.collidingObjs = this.hit('destroy');
+						this.draggableObjs = this.hit('draggable');
+						for (var i in this.draggableObjs){
+							this.draggableObjs[i].obj.attr({x: from.x-16, y:from.y-16});
+							//this.draggableObjs[i].obj.move("right",1);
+						}
 						if( this.hit('solid')) {
 							this.attr({x: from.x, y:from.y});
 						}						
@@ -235,8 +255,8 @@ window.onload = function() {
 		});
 		
 		//create our player entity with some premade components
-		player = Crafty.e("2D, DOM, link, RightControls, Hero, Animate, Collision")
-			.attr({x: 160, y: 144, z: 1})
+		player = Crafty.e("2D, Canvas, link, RightControls, Hero, Animate, Collision")
+			.attr({x: 160, y: 144, z: 2})
 			.rightControls(1);
 	});
 	

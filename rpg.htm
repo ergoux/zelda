@@ -1,14 +1,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>	<script type="text/javascript" src="crafty.js"></script>
+<head>	
+	<script type="text/javascript" src="crafty.js"></script>
 	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 	<title>Tutorial</title>
 	<style>
-	body, html { margin:0; padding: 0; overflow:hidden; font-family:Arial; font-size:20px }
-	#cr-stage { border:2px solid black; margin:5px auto; color:white }
+	body, html { -webkit-user-select:none; margin:0; padding: 0; overflow:hidden; font-family:Arial; font-size:20px; background: #FFF; }
+	#cr-stage { border:2px solid black; margin: 10px; color:white; position:absolute;}
+	.btn{display:inline;}
+	.wrapper{position:absolute;bottom:10px;}
 	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			document.ontouchmove = function(e){ e.preventDefault(); }
+			
+			$(".btn").bind("touchstart",function (e){
+				$(e.target).css("background-color","#0000FF")
+				console.log($(e.target).html());
+				if(player)player.trigger("KeyDown",{key:Crafty.keys[$(e.target).html() ]});	
+			});
+			$(".btn").bind("touchend",function (e){
+				$(e.target).css("background-color","#FFFFFF")});
+				if(player)player.trigger("KeyUp",{key:Crafty.keys[$(e.target).html() ]});	
+				
+		});
+	</script>
 </head>
 <body>
+	 <div id="cr-stage"></div>
+	<div class="wrapper">
+		<div class="btn">LEFT_ARROW</div>
+		<div class="btn">RIGHT_ARROW</div>
+		<div class="btn">UP_ARROW</div>
+		<div class="btn">DOWN_ARROW</div>
+		<div class="btn">Z</div>
+	</div>
 </body>
 </html>
