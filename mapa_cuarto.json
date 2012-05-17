@@ -80,7 +80,7 @@
              "z-index":"10"
             },
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":39,
          "x":0,
          "y":0
